@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import cart from "/cart2.svg";
 import menu from "/menu.svg";
 
@@ -10,8 +11,19 @@ const Header = () => {
     { label: "Bags", className: "" },
     { label: "Accessories", className: "" },
   ];
+
+  const [showMenu, setShowMenu] = useState(false);
+
+  const menuClick = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   return (
-    <header className=" w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
+    <header className="font-Inter w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
       <Link to={"/"}>
         <h1 className="text-[32px] p-2 text-[#C80001] font-title cursor-pointer">
           Body Shop
@@ -42,7 +54,7 @@ const Header = () => {
         />
       </form>
       <div className="flex items-center gap-4">
-        <Link to="/cart" className="hidden md:block">
+        <Link to="/cart" className=" md:block">
           <button className="w-10 h-10 bg-[#c80001] rounded-full p-2 flex items-center justify-center hover:border-2 hover:border-[#c80001] hover:bg-transparent transition hover:ease-in">
             <img
               loading="lazy"
@@ -52,10 +64,21 @@ const Header = () => {
             />
           </button>
         </Link>
-        <div className="block md:hidden cursor-pointer">
-          <button className="">
+        <div className="block md:hidden cursor-pointer relative">
+          <button onClick={menuClick} className="">
             <img loading="lazy" src={menu} className="w-9" alt="" />
           </button>
+          <ul
+            className={`absolute top-10 right-0 text-lg bg-white px-8 py-5 z-10 text-black ${
+              showMenu ? `flex flex-col` : `hidden`
+            } items-center gap-2 text-xl font-Inter font-medium z-10`}
+          >
+            <li className="hover:text-[#f08000]">Home</li>
+            <li className="hover:text-[#f08000]">Wears</li>
+            <li className="text-[#f08000] hover:text-black">Shoes</li>
+            <li className="hover:text-[#f08000]">Bags</li>
+            <li className="hover:text-[#f08000]">Accessories</li>
+          </ul>
         </div>
       </div>
       {/* </div> */}

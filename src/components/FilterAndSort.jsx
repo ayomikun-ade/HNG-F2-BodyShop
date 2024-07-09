@@ -45,13 +45,14 @@ const FilterAndSort = () => {
           />
         </div>
         <ul
-          className={`absolute top-6 bg-white rounded-lg px-3 py-2 text-black ${
+          className={`absolute top-8 right-0 bg-white px-6 py-5 text-black ${
             sort ? `flex flex-col` : `hidden`
-          }`}
+          } items-center gap-2 text-lg font-Inter font-medium`}
         >
+          <li className="hover:text-[#f08000]">Recommended</li>
+          <li className="hover:text-[#f08000]">Most Popular</li>
           <li className="hover:text-[#f08000]">Price</li>
-          <li className="hover:text-[#f08000]">Rating</li>
-          <li className="hover:text-[#f08000]">A - Z</li>
+          <li className="hover:text-[#f08000]">Brand</li>
         </ul>
       </div>
     </div>
