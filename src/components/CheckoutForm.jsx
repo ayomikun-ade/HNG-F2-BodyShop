@@ -129,7 +129,6 @@ const CheckoutForm = () => {
                 <input
                   type="date"
                   id="date"
-                  placeholder="mm/dd/yyyy"
                   className="outline-none border border-neutral-400 rounded p-4"
                 />
               </div>
@@ -148,7 +147,7 @@ const CheckoutForm = () => {
           </fieldset>
           <button
             onClick={handleSubmit}
-            className="my-9 bg-[#f08000] w-full text-white p-2 rounded-lg text-2xl"
+            className="my-9 border-2 border-[#f08000] hover:bg-transparent hover:text-[#f08000] bg-[#f08000] w-full text-white p-2 rounded-lg text-2xl"
           >
             Proceed to Pay
           </button>
