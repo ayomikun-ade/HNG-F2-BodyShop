@@ -3,9 +3,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProductItem from "../components/ProductItem";
 import products from "../components/productsData";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ShopPage = () => {
   return (
     <div className="bg-[url(/src/assets/hero.png)] bg-no-repeat bg-contain">
+      <ToastContainer />
       <div className=" px-[120px]">
         <Header />
         {/* Page header */}
