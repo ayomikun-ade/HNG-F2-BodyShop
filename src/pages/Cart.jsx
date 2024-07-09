@@ -43,7 +43,7 @@ const Cart = () => {
       <div className="flex flex-col gap-4 mt-6">
         {cartItems.map((item) => (
           <CartItem
-            id={item.id}
+            key={item.id}
             name={item.name}
             imageSrc={item.imageSrc}
             price={item.price}
