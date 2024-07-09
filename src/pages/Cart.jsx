@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Title from "../components/Title";
 import { ToastContainer, toast } from "react-toastify";
 import CartItem from "../components/CartItem";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = [
@@ -21,7 +22,7 @@ const Cart = () => {
     toast.info("You are currently viewing all items!", { autoClose: 4000 });
   };
   return (
-    <div className="px-4 md:px-[120px] w-full font-Inter">
+    <div className="px-4 mb-10 md:px-[120px] w-full font-Inter">
       <ToastContainer />
       <Header />
       <Title title={"Shopping Cart"} nav={"/"} />
@@ -42,6 +43,56 @@ const Cart = () => {
             price={item.price}
           />
         ))}
+      </div>
+      <div className="mt-6 p-2 text-lg flex flex-col gap-3">
+        <div className="flex justify-between">
+          <p>Subtotal</p>
+          <p className="flex text-lg">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
+              className="shrink-0 w-[24px]"
+              alt="Currency symbol"
+            />
+            311,000
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <p>V.A.T</p>
+          <p className="flex text-lg font-semibold">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
+              className="shrink-0 w-[24px]"
+              alt="Currency symbol"
+            />
+            0.00
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold">Total</p>
+          <p className="flex text-lg font-semibold">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
+              className="shrink-0 w-[24px]"
+              alt="Currency symbol"
+            />
+            311,000
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 flex justify-between items-center">
+        <Link to={"/"} className="text-[#f08000] text-xl px-6">
+          Continue Shopping
+        </Link>
+        <Link
+          to={"/checkout"}
+          className="bg-[#f08000] text-white px-6 py-3 rounded-xl text-xl"
+        >
+          Proceed to Checkout
+        </Link>
       </div>
     </div>
   );
