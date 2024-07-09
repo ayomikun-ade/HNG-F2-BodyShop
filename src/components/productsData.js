@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    imageSrc: "/src/assets/puma.png",
+    imageSrc: "/puma.png",
     name: "White Puma Converse",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -9,7 +9,7 @@ const products = [
   },
   {
     id: 2,
-    imageSrc: "/src/assets/jimmy.png",
+    imageSrc: "/jimmy.png",
     name: "Jimmy Choo Floral Heels",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/c4ce6a99fad32bb7b072f6e3deb4c389697cabd7e69d5ba5aff66e7a6f71c65f?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -17,7 +17,7 @@ const products = [
   },
   {
     id: 3,
-    imageSrc: "/src/assets/heels.png",
+    imageSrc: "/heels.png",
     name: "Brown Casual Heels",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -25,7 +25,7 @@ const products = [
   },
   {
     id: 4,
-    imageSrc: "/src/assets/timber.png",
+    imageSrc: "/timber.png",
     name: "Timberland Boots",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -33,7 +33,7 @@ const products = [
   },
   {
     id: 5,
-    imageSrc: "/src/assets/sneakers.png",
+    imageSrc: "/sneakers.png",
     name: "Nike Sneakers",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -41,7 +41,7 @@ const products = [
   },
   {
     id: 6,
-    imageSrc: "/src/assets/leather.png",
+    imageSrc: "/leather.png",
     name: "Brown Leather Shoe",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -49,7 +49,7 @@ const products = [
   },
   {
     id: 7,
-    imageSrc: "/src/assets/maleankle.png",
+    imageSrc: "/maleankle.png",
     name: "Black Ankle Shoe",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -57,7 +57,7 @@ const products = [
   },
   {
     id: 8,
-    imageSrc: "/src/assets/sandals.png",
+    imageSrc: "/sandals.png",
     name: "Fenty Sandals",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -65,7 +65,7 @@ const products = [
   },
   {
     id: 9,
-    imageSrc: "/src/assets/trainers.png",
+    imageSrc: "/trainers.png",
     name: "Sports Trainers",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -73,7 +73,7 @@ const products = [
   },
   {
     id: 10,
-    imageSrc: "/src/assets/pin.png",
+    imageSrc: "/pin.png",
     name: "Zara Pin Heels",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -81,7 +81,7 @@ const products = [
   },
   {
     id: 11,
-    imageSrc: "/src/assets/pin.png",
+    imageSrc: "/pin.png",
     name: "Ankle Boots",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: 12,
-    imageSrc: "/src/assets/ecco.png",
+    imageSrc: "/ecco.png",
     name: "Ecco Brown Leather Shoe",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -97,7 +97,7 @@ const products = [
   },
   {
     id: 13,
-    imageSrc: "/src/assets/lace.png",
+    imageSrc: "/lace.png",
     name: "Brown Leather Shoe with Lace",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -105,7 +105,7 @@ const products = [
   },
   {
     id: 14,
-    imageSrc: "/src/assets/jordan.png",
+    imageSrc: "/jordan.png",
     name: "Nike Air Jordan",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -113,7 +113,7 @@ const products = [
   },
   {
     id: 15,
-    imageSrc: "/src/assets/nike.png",
+    imageSrc: "/nike.png",
     name: "Nike Trainers",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -121,7 +121,7 @@ const products = [
   },
   {
     id: 16,
-    imageSrc: "/src/assets/air.png",
+    imageSrc: "/air.png",
     name: "Nike Air",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/78e4082f588e5599440ad56b74bf14fd684dce2f7e938b9f0f30810587702bd4?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -129,7 +129,7 @@ const products = [
   },
   {
     id: 17,
-    imageSrc: "/src/assets/gold.png",
+    imageSrc: "/gold.png",
     name: "Atmosphere Gold Heels",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
@@ -137,7 +137,7 @@ const products = [
   },
   {
     id: 18,
-    imageSrc: "/src/assets/colour.png",
+    imageSrc: "/colour.png",
     name: "Multicolour Sneakers",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/2519c799476098d2f7b12c6009b4db52b0f0d2bc8e056ccbbdf8bb69de5e132d?apiKey=af97e94b909e4cdbb531b36fb1b19598&",
