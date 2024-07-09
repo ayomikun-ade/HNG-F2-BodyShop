@@ -55,9 +55,11 @@ const CartItem = ({ name, imageSrc, price }) => {
         <div className="flex gap-2 items-center">
           <img loading="lazy" src={imageSrc} className="w-24" alt={name} />
           <div>
-            <h3 className="text-lg font-semibold">{name}</h3>
-            <p>Comfortable and durable shoes.</p>
-            <div className="flex gap-0 items-center px-1 text-base text-black whitespace-nowrap">
+            <h3 className="text-lg font-semibold leading-none">{name}</h3>
+            <p className="text-base font-normal">
+              Comfortable and durable shoes.
+            </p>
+            <div className="flex gap-0 items-center pr-1 text-base text-black whitespace-nowrap">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
@@ -76,7 +78,7 @@ const CartItem = ({ name, imageSrc, price }) => {
               className="w-8 hover:fill-red-400 cursor-pointer"
             />
           </div>
-          <div className="flex gap-0 -mb-5 sm:mb-0 sm:gap-2 items-center">
+          <div className="flex gap-0 sm:mb-0 sm:gap-2 items-center">
             <span onClick={removeItem} className="px-1  cursor-pointer ">
               <img src="/minus.svg" alt="minus sign" />
             </span>
