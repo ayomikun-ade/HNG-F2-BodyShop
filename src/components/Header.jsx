@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import cart from "/cart2.svg";
 import menu from "/menu.svg";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const menuItems = [
-    { label: "Home", className: "" },
-    { label: "Wears", className: "" },
+    { label: "Home", className: "hover:text-[#c80001]" },
+    { label: "Wears", className: "hover:text-[#c80001]" },
     { label: "Shoes", className: "text-[#C80001]" },
-    { label: "Bags", className: "" },
-    { label: "Accessories", className: "" },
+    { label: "Bags", className: "hover:text-[#c80001]" },
+    { label: "Accessories", className: "hover:text-[#c80001]" },
   ];
 
   const [showMenu, setShowMenu] = useState(false);
@@ -22,6 +23,13 @@ const Header = () => {
     setShowMenu(false);
   };
 
+  const navButton = () => {
+    toast.info(
+      "Only Shoe products are available right now. Check back later!",
+      { autoClose: 4000 }
+    );
+  };
+
   return (
     <header className="font-Inter w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
       <Link to={"/"}>
@@ -32,7 +40,12 @@ const Header = () => {
       {/* <div className="flex gap-5 self-start max-md:flex-wrap"> */}
       <nav className="hidden lg:flex flex-1 gap-4 justify-between lg:px-2 xl:px-10 py-2 my-auto text-base whitespace-nowrap text-stone-950 max-md:flex-wrap max-md:px-5">
         {menuItems.map((item, index) => (
-          <a key={index} href="#" className={`${item.className} p-1`}>
+          <a
+            onClick={navButton}
+            key={index}
+            href="#"
+            className={`${item.className} p-1`}
+          >
             {item.label}
           </a>
         ))}

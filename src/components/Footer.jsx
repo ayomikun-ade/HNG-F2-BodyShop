@@ -14,19 +14,19 @@ const Footer = () => {
           <img
             loading="lazy"
             src="/facebook.svg"
-            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
+            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full cursor-pointer"
             alt="facebook icon"
           />
           <img
             loading="lazy"
             src="/instagram.svg"
-            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
+            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full cursor-pointer"
             alt="Instagram icon"
           />
           <img
             loading="lazy"
             src="/twitter.svg"
-            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
+            className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full cursor-pointer"
             alt="Twitter icon"
           />
         </div>
@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="flex gap-2 self-start mt-4 whitespace-nowrap">
           <img
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/5744e3b6f8b29e4fb54e29dcaa513de67dd5d78c237d277811484753d84609e7?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
+            src="/call.svg"
             className="shrink-0 w-6 aspect-square"
             alt="Phone icon"
           />
@@ -77,7 +77,7 @@ const Footer = () => {
             type="email"
             id="email"
             placeholder="Email"
-            className="w-full rounded-l-lg pl-4 py-4 text-[#c80001] text-xl outline-none bg-white font-semibold placeholder:text-[#c80001]"
+            className="w-full rounded-l-lg pl-4 py-4 text-[#c80001] text-lg outline-none bg-white font-semibold placeholder:text-[#c80001]"
             aria-label="Enter your email for updates"
           />
           <button
