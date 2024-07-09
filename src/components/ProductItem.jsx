@@ -12,7 +12,7 @@ const ProductItem = ({ product }) => {
     //   <p className="text-gray-600">{product.price}</p>
     //   {/* Add buttons for adding to cart or viewing details */}
     // </div>
-    <div className="rounded-2xl bg-white font-semibold w-full">
+    <div className="rounded-3xl bg-white font-semibold w-full">
       <img
         loading="lazy"
         src={product.imageSrc}
@@ -21,7 +21,7 @@ const ProductItem = ({ product }) => {
       />
       <div className="bg-white flex flex-col gap-1 p-4 rounded-b-2xl shadow-md">
         <div className="flex justify-between flex-1 text-base text-black">
-          <div>{product.name}</div>
+          <h3>{product.name}</h3>
           <div className="flex gap-0 items-center px-1 text-base text-black whitespace-nowrap">
             <img
               loading="lazy"

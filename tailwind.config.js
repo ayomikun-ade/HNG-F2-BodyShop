@@ -17,6 +17,9 @@ export default {
     // "light-green": "#9cc4b2",
     // "light-pink": "#c98ca7",
     // "dark-green": "#426b69",
+    // "orange": "#F08000",
+    // "redish": "#C80001";
+
     // },
     fontFamily: {
       title: ["Space Grotesk", "sans-serif"],

@@ -5,7 +5,7 @@ import ProductItem from "../components/ProductItem";
 import products from "../components/productsData";
 const ShopPage = () => {
   return (
-    <div className="bg-[url(/src/assets/header.png)] bg-no-repeat bg-contain bg-[#c98ca7]">
+    <div className="bg-[url(/src/assets/hero.png)] bg-no-repeat bg-contain">
       <div className=" px-[120px]">
         <Header />
         {/* Page header */}
@@ -23,7 +23,7 @@ const ShopPage = () => {
         </div>
         {/* Load more button */}
         <div className="flex justify-center items-center">
-          <button className="bg-[#991e66] text-white text-base p-2 text-center">
+          <button className="bg-[#C80001] text-white text-base p-2 text-center">
             Load more
           </button>
         </div>
