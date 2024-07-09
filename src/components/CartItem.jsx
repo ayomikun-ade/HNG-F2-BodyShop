@@ -75,16 +75,16 @@ const CartItem = ({ name, imageSrc, price }) => {
             <img
               src="/delete.svg"
               alt="delete"
-              className="w-8 hover:fill-red-400 cursor-pointer"
+              className="w-7 hover:fill-red-400 cursor-pointer"
             />
           </div>
           <div className="flex gap-0 sm:mb-0 sm:gap-2 items-center">
             <span onClick={removeItem} className="px-1  cursor-pointer ">
-              <img src="/minus.svg" alt="minus sign" />
+              <img src="/minus.svg" alt="minus sign" className="w-5" />
             </span>
             <p>{count}</p>
             <span onClick={addItem} className="px-1 cursor-pointer">
-              <img src="/plus.svg" alt="plus sign" />
+              <img src="/plus.svg" alt="plus sign" className="w-5" />
             </span>
           </div>
         </div>

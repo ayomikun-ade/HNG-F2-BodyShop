@@ -50,7 +50,7 @@ const Cart = () => {
           />
         ))}
       </div>
-      <div className="mt-6 p-2 text-lg flex flex-col gap-3">
+      <div className="mt-6 p-2 text-lg flex flex-col gap-3 lg:border-none border rounded-xl">
         <div className="flex justify-between">
           <p>Subtotal</p>
           <p className="flex text-lg">
