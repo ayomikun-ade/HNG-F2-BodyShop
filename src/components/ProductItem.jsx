@@ -43,7 +43,7 @@ const ProductItem = ({ product }) => {
           />
           <Link
             to={"/cart"}
-            className="self-start mt-2 ml-4 text-xs bg-[#f08000] p-1 text-white max-md:ml-2.5"
+            className="self-start mt-2 ml-4 text-xs flex items-center bg-[#f08000] rounded p-1 text-white max-md:ml-2.5"
           >
             Add to cart
           </Link>

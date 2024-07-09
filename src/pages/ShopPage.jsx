@@ -16,7 +16,7 @@ const ShopPage = () => {
   return (
     <div className="w-screen bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
-      <div className="px-4 md:px-[120px]">
+      <div className="px-4 lg:px-[120px] md:px-[60px]">
         <Header />
         {/* Page header */}
         <div className="text-center mt-[53px] font-Inter">
