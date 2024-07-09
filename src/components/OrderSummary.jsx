@@ -2,7 +2,7 @@ import React from "react";
 
 const OrderSummary = () => {
   return (
-    <div className="col-span-2 border border-neutral-400 rounded-[24px] py-20 px-8 h-fit mt-24">
+    <div className="col-span-2 border border-neutral-400 rounded-[24px] py-20 px-8 h-fit mt-6 md:mt-24">
       <h2 className="text-3xl font-bold mb-11">Order Summary</h2>
       <div className="flex flex-col gap-9 text-2xl">
         <div className="flex justify-between">

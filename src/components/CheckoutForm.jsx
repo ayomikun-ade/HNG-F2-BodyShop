@@ -19,7 +19,7 @@ const CheckoutForm = () => {
   };
   return (
     <>
-      <div className="col-span-3 pr-16">
+      <div className="col-span-3 md:pr-16 pr-0 mt-16 md:mt-0">
         <h2 className="text-2xl font-bold mb-6">Contact information</h2>
         <form className="">
           <fieldset className="flex flex-col gap-4 border-b border-neutral-400 pb-10">
