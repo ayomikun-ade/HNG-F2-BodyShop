@@ -10,7 +10,7 @@ const Header = () => {
     <header className="flex items-center gap-6 py-[18px]  border-b border-[#C80001] border-solid max-md:flex-wrap">
       <h1 className="text-[32px] p-2 text-[#C80001] font-title">Body Shop</h1>
       {/* <div className="flex gap-5 self-start max-md:flex-wrap"> */}
-      <nav className="hidden md:flex flex-1 gap-6 justify-between px-20 py-2 my-auto text-base whitespace-nowrap text-stone-950 max-md:flex-wrap max-md:px-5">
+      <nav className="hidden lg:flex flex-1 gap-6 justify-between px-20 py-2 my-auto text-base whitespace-nowrap text-stone-950 max-md:flex-wrap max-md:px-5">
         {menuItems.map((item, index) => (
           <a key={index} href="#" className={`${item.className} p-2`}>
             {item.label}
@@ -28,7 +28,7 @@ const Header = () => {
         />
         <img
           loading="lazy"
-          src="/src/assets/search.png"
+          src="/search.png"
           alt=""
           className="w-5 cursor-pointer transition hover:ease-in-out hover:scale-110"
         />
@@ -45,7 +45,7 @@ const Header = () => {
         <button className="w-10 h-10 bg-[#c80001] rounded-full p-2 flex items-center justify-center hover:border-2 hover:border-[#c80001] hover:bg-transparent transition hover:ease-in">
           <img
             loading="lazy"
-            src="/src/assets/cartsvg.svg"
+            src="/cartsvg.svg"
             className="shrink-0 hover:fill-[#c80001]"
             alt=""
           />
