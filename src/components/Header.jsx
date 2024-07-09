@@ -30,7 +30,7 @@ const Header = () => {
         </h1>
       </Link>
       {/* <div className="flex gap-5 self-start max-md:flex-wrap"> */}
-      <nav className="hidden lg:flex flex-1 gap-4 justify-between px-10 py-2 my-auto text-base whitespace-nowrap text-stone-950 max-md:flex-wrap max-md:px-5">
+      <nav className="hidden lg:flex flex-1 gap-4 justify-between lg:px-2 xl:px-10 py-2 my-auto text-base whitespace-nowrap text-stone-950 max-md:flex-wrap max-md:px-5">
         {menuItems.map((item, index) => (
           <a key={index} href="#" className={`${item.className} p-1`}>
             {item.label}
