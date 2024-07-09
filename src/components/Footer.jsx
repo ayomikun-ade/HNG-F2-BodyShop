@@ -7,27 +7,27 @@ const Footer = () => {
   };
 
   return (
-    <footer className="font-title flex flex-col flex-wrap md:flex-row gap-10 items-start md:items-center justify-evenly px-8 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
-      <div className="flex flex-col items-center gap-6 mx-6">
+    <footer className="font-title flex flex-col flex-wrap mx-auto lg:flex-nowrap md:flex-row gap-10 items-start md:items-center justify-evenly px-10 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
+      <div className="flex flex-col md:items-center gap-6 mx-6">
         <h2 className="text-[32px] p-2 text-white font-title">Body Shop</h2>
         <div className="flex gap-5 ">
           <img
             loading="lazy"
             src="/facebook.svg"
             className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
-            alt="Social media icon 1"
+            alt="facebook icon"
           />
           <img
             loading="lazy"
             src="/instagram.svg"
             className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
-            alt="Social media icon 2"
+            alt="Instagram icon"
           />
           <img
             loading="lazy"
             src="/twitter.svg"
             className="shrink-0 w-12 h-12 border border-white p-1 bg-white rounded-full"
-            alt="Social media icon 3"
+            alt="Twitter icon"
           />
         </div>
       </div>
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 self-center text-base text-white">
+      <div className="flex flex-col gap-6 self-center sm:-ml-36 md:ml-0 text-base text-white">
         <h3 className="text-2xl text-center">Subscribe to our news letter</h3>
         <p className="text-[16px] text-center">
           Enter your email for more updates

@@ -1,19 +1,10 @@
 // ProductItem.js
 
 import { Link } from "react-router-dom";
+import StarRating from "./StarRating";
 
 const ProductItem = ({ product }) => {
   return (
-    // <div className="bg-white p-4 rounded-lg shadow-md">
-    //   <img
-    //     src={product.imageSrc}
-    //     alt={product.name}
-    //     className="w-full h-40 object-cover"
-    //   />
-    //   <p className="text-gray-800 font-semibold">{product.name}</p>
-    //   <p className="text-gray-600">{product.price}</p>
-    //   {/* Add buttons for adding to cart or viewing details */}
-    // </div>
     <div className="rounded-3xl bg-white font-semibold w-full">
       <img
         loading="lazy"
@@ -35,12 +26,7 @@ const ProductItem = ({ product }) => {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <img
-            loading="lazy"
-            src="/rating.png"
-            className=""
-            alt="Product rating"
-          />
+          <StarRating />
           <Link
             to={"/cart"}
             className="self-start mt-2 ml-4 text-xs flex items-center bg-[#f08000] rounded p-1 text-white max-md:ml-2.5"

@@ -1,6 +1,8 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import OrderSummary from "./OrderSummary";
+import OrderMobile from "./OrderMobile";
 
 const CheckoutForm = () => {
   const navigate = useNavigate();
@@ -17,9 +19,12 @@ const CheckoutForm = () => {
       autoClose: 3000,
     });
   };
+
+  const [showPage, setShowPage] = useState(true);
+
   return (
     <>
-      <div className="col-span-3 md:pr-16 pr-0 mt-16 md:mt-0">
+      <div className="col-span-3 md:pr-16 pr-0 mt-16 md:mt-5">
         <h2 className="text-2xl font-bold mb-6">Contact information</h2>
         <form className="">
           <fieldset className="flex flex-col gap-4 border-b border-neutral-400 pb-10">
@@ -97,6 +102,9 @@ const CheckoutForm = () => {
               </label>
             </div>
           </fieldset>
+
+          <OrderMobile />
+
           <fieldset className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold my-6">Payment Details</h2>
             <div className="flex flex-col">
@@ -147,10 +155,15 @@ const CheckoutForm = () => {
           </fieldset>
           <button
             onClick={handleSubmit}
-            className="my-9 border-2 border-[#f08000] hover:bg-transparent hover:text-[#f08000] bg-[#f08000] w-full text-white p-2 rounded-lg text-2xl"
+            className="mt-9 border-2 border-[#f08000] transition hover:ease-in hover:bg-transparent hover:text-[#f08000] bg-[#f08000] w-full text-white p-2 rounded-lg text-2xl"
           >
-            Proceed to Pay
+            Checkout
           </button>
+          <Link to={"/"}>
+            <button className="lg:hidden border border-[#f08000] w-full mt-5 py-2 text-[#f08000] rounded-lg text-2xl hover:text-black transition hover:ease-in">
+              Cancel
+            </button>
+          </Link>
         </form>
       </div>
     </>

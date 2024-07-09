@@ -16,21 +16,24 @@ const ShopPage = () => {
   return (
     <div className="w-screen bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
-      <div className="px-4 lg:px-[120px] md:px-[60px]">
+      <div className="px-4 lg:px-[119px] md:px-[60px]">
         <Header />
         {/* Page header */}
         <div className="text-center mt-[53px] font-Inter">
           <h1 className="text-4xl font-bold leading-none mb-4">Shoes</h1>
           <p className="text-xl">Explore our range of footwear</p>
         </div>
+
         {/* Filter button */}
         <FilterAndSort />
+
         {/* Product grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6 mb-8">
           {products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
         </div>
+
         {/* Load more button */}
         <div className="flex justify-center items-center">
           <button

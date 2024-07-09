@@ -92,7 +92,7 @@ const Cart = () => {
       <div className="mt-6 flex flex-col-reverse lg:flex-row justify-between items-center">
         <Link
           to={"/"}
-          className="text-[#f08000] hover:text-black transition hover:ease-in text-xl px-6 py-3 lg:py-0 w-full text-center lg:border-none border-2 border-[#f08000] rounded-xl mt-2 lg:mt-0 lg:w-fit"
+          className="text-[#f08000] hover:text-black transition hover:ease-in text-xl px-8 py-3 w-full text-center lg:border lg:rounded-none border-2 border-[#f08000] rounded-xl mt-2 lg:mt-0 lg:w-fit"
         >
           Continue Shopping
         </Link>

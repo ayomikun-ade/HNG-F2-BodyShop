@@ -1,9 +1,11 @@
 import React from "react";
 
-const OrderSummary = () => {
+const OrderMobile = () => {
   return (
-    <div className="hidden lg:inline-block col-span-2 border border-neutral-400 rounded-[24px] py-20 px-8 h-fit mt-6 md:mt-24">
-      <h2 className="text-3xl font-bold mb-11">Order Summary</h2>
+    <div
+      className={`lg:hidden inline-block w-full border-b border-neutral-400 pt-10 pb-7 px-2`}
+    >
+      <h2 className="text-2xl font-bold mb-11">Order Summary</h2>
       <div className="flex flex-col gap-9 text-2xl">
         <div className="flex justify-between">
           <p>Price of Items</p>
@@ -62,4 +64,4 @@ const OrderSummary = () => {
   );
 };
 
-export default OrderSummary;
+export default OrderMobile;

@@ -14,7 +14,7 @@ const CheckoutPage = () => {
         <Header />
       </div>
       <Title title={"Checkout"} nav={"/cart"} />
-      <div className="md:grid grid-cols-5 mt-8 gap-5 mb-10 flex flex-col-reverse">
+      <div className="lg:grid grid-cols-5 mt-8 gap-5 mb-10 flex flex-col-reverse">
         <CheckoutForm />
         <OrderSummary />
       </div>
