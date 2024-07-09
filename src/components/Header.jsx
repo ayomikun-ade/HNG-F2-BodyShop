@@ -71,7 +71,7 @@ const Header = () => {
           <ul
             className={`absolute top-10 right-0 text-lg bg-white px-8 py-5 z-10 text-black ${
               showMenu ? `flex flex-col` : `hidden`
-            } items-center gap-2 text-xl font-Inter font-medium z-10`}
+            } items-center gap-2 text-xl font-Inter font-medium z-10 shadow-lg`}
           >
             <li className="hover:text-[#f08000]">Home</li>
             <li className="hover:text-[#f08000]">Wears</li>
