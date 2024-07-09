@@ -5,7 +5,7 @@ import StarRating from "./StarRating";
 
 const ProductItem = ({ product }) => {
   return (
-    <div className="rounded-3xl bg-white font-semibold w-full">
+    <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]">
       <img
         loading="lazy"
         src={product.imageSrc}
