@@ -8,7 +8,7 @@ const Title = ({ title, nav }) => {
         <img
           src="/back.svg"
           alt="back button"
-          className="absolute -top-9 sm:top-0"
+          className="absolute w-6 sm:w-fit mt-2 sm:top-0"
         />
       </Link>
       <h1 className="text-4xl mt-2 font-bold text-center">{title}</h1>
