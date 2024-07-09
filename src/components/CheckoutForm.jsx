@@ -137,7 +137,7 @@ const CheckoutForm = () => {
                 <input
                   type="date"
                   id="date"
-                  className="outline-none border border-neutral-400 rounded p-4"
+                  className="outline-none border border-neutral-400 bg-transparent rounded p-4"
                 />
               </div>
               <div className="flex flex-col">

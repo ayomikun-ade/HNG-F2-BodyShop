@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <header className="font-Inter w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
       <Link to={"/"}>
-        <h1 className="text-[32px] p-2 text-[#C80001] font-title cursor-pointer">
+        <h1 className="text-[32px] p-2 text-[#C80001] text-nowrap font-title cursor-pointer">
           Body Shop
         </h1>
       </Link>

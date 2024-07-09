@@ -8,7 +8,7 @@ import OrderSummary from "../components/OrderSummary";
 
 const CheckoutPage = () => {
   return (
-    <div className="px-4 md:px-[120px] w-full font-Inter">
+    <div className="px-4 md:px-[119px] w-full font-Inter">
       <ToastContainer />
       <div className="hidden lg:flex">
         <Header />

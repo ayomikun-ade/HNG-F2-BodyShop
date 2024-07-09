@@ -22,7 +22,7 @@ const Cart = () => {
     toast.info("You are currently viewing all items!", { autoClose: 4000 });
   };
   return (
-    <div className="px-4 mb-10 md:px-[120px] w-full font-Inter">
+    <div className="px-4 mb-10 md:px-[119px] w-full font-Inter">
       <ToastContainer />
       <div className="hidden lg:flex">
         <Header />
