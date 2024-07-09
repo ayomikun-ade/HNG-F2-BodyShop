@@ -1,5 +1,7 @@
 // ProductItem.js
 
+import { Link } from "react-router-dom";
+
 const ProductItem = ({ product }) => {
   return (
     // <div className="bg-white p-4 rounded-lg shadow-md">
@@ -19,7 +21,7 @@ const ProductItem = ({ product }) => {
         className="w-full"
         alt={product.name}
       />
-      <div className="bg-white flex flex-col gap-1 p-4 rounded-b-2xl shadow-md">
+      <div className="bg-[#000] bg-opacity-15 flex flex-col gap-1 p-4 rounded-b-2xl shadow-md">
         <div className="flex justify-between flex-1 text-base text-black">
           <h3>{product.name}</h3>
           <div className="flex gap-0 items-center px-1 text-base text-black whitespace-nowrap">
@@ -32,16 +34,19 @@ const ProductItem = ({ product }) => {
             <div>{product.price}</div>
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <img
             loading="lazy"
-            src={product.rating}
-            className="max-w-full aspect-[5] w-[120px]"
+            src="/rating.png"
+            className=""
             alt="Product rating"
           />
-          <button className="self-start mt-2 ml-4 text-xs text-[#426b69] max-md:ml-2.5">
+          <Link
+            to={"/cart"}
+            className="self-start mt-2 ml-4 text-xs bg-[#f08000] p-1 text-white max-md:ml-2.5"
+          >
             Add to cart
-          </button>
+          </Link>
         </div>
       </div>
     </div>

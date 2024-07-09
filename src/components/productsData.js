@@ -81,7 +81,7 @@ const products = [
   },
   {
     id: 11,
-    imageSrc: "/pin.png",
+    imageSrc: "/ankle.png",
     name: "Ankle Boots",
     rating:
       "https://cdn.builder.io/api/v1/image/assets/TEMP/924d079bacd1685afdb1c90715a8ca82a83a51c61d985e573d3794ba6062249a?apiKey=af97e94b909e4cdbb531b36fb1b19598&",

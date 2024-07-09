@@ -22,7 +22,7 @@ const FilterAndSort = () => {
         className="flex p-2 text-white whitespace-nowrap bg-[#F08000] rounded-lg cursor-pointer border-2 border-[#f08000] transition hover:ease-in-out hover:bg-transparent"
       >
         <div className="flex gap-1.5 justify-center items-center px-2">
-          <span className="my-auto">Filter</span>
+          <span className="my-auto hidden md:inline-block">Filter</span>
           <img
             loading="lazy"
             src="/filter.png"

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import FilterAndSort from "../components/FilterAndSort";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -7,10 +8,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ShopPage = () => {
+  const moreClick = () => {
+    toast.info("Sadly, there are no more products to view. Try again later.", {
+      autoClose: 4000,
+    });
+  };
   return (
-    <div className="bg-[url(/src/assets/hero.png)] bg-no-repeat bg-contain">
+    <div className="w-screen bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
-      <div className=" px-[120px]">
+      <div className="px-4 md:px-[120px]">
         <Header />
         {/* Page header */}
         <div className="text-center mt-[53px] font-Inter">
@@ -20,15 +26,18 @@ const ShopPage = () => {
         {/* Filter button */}
         <FilterAndSort />
         {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mt-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6 mb-8">
           {products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
         </div>
         {/* Load more button */}
         <div className="flex justify-center items-center">
-          <button className="bg-[#C80001] text-white text-base p-2 text-center">
-            Load more
+          <button
+            onClick={moreClick}
+            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+          >
+            See more
           </button>
         </div>
       </div>
