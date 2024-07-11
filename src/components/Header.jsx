@@ -19,9 +19,9 @@ const Header = () => {
     setShowMenu(!showMenu);
   };
 
-  const closeMenu = () => {
-    setShowMenu(false);
-  };
+  // const closeMenu = () => {
+  //   setShowMenu(false);
+  // };
 
   const navButton = () => {
     toast.info(
@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className="font-Inter w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
+    <header className="font-Inter max-w-[1200px] w-full flex items-center justify-between py-[18px] gap-4 md:border-b border-[#C80001] border-solid">
       <Link to={"/"}>
         <h1 className="text-[32px] p-2 text-[#C80001] text-nowrap font-title cursor-pointer">
           Body Shop
@@ -50,20 +50,20 @@ const Header = () => {
           </a>
         ))}
       </nav>
-      <form className="hidden md:flex justify-center items-center px-8 py-2 rounded-2xl border-2 border-[#C80001] border-solid max-md:px-5">
+      <form className="hidden md:flex w-[313px] justify-center items-center px- py-2 rounded-2xl border-2 border-[#C80001] border-solid">
         <label htmlFor="search" className="sr-only">
           Search
         </label>
         <input
           type="text"
           id="search"
-          className="bg-transparent outline-none"
+          className="bg-transparent w-full outline-none"
         />
         <img
           loading="lazy"
           src="/search.png"
           alt=""
-          className="w-5 cursor-pointer transition hover:ease-in-out hover:scale-110"
+          className="w-5 mr-3 cursor-pointer transition hover:ease-in-out hover:scale-110"
         />
       </form>
       <div className="flex items-center gap-4">
@@ -77,7 +77,7 @@ const Header = () => {
             />
           </button>
         </Link>
-        <div className="block md:hidden cursor-pointer relative">
+        <div className="block lg:hidden cursor-pointer relative">
           <button onClick={menuClick} className="">
             <img loading="lazy" src={menu} className="w-9" alt="" />
           </button>
@@ -86,11 +86,21 @@ const Header = () => {
               showMenu ? `flex flex-col` : `hidden`
             } items-center gap-2 text-xl font-Inter font-medium z-10 shadow-lg`}
           >
-            <li className="hover:text-[#f08000]">Home</li>
-            <li className="hover:text-[#f08000]">Wears</li>
-            <li className="text-[#f08000] hover:text-black">Shoes</li>
-            <li className="hover:text-[#f08000]">Bags</li>
-            <li className="hover:text-[#f08000]">Accessories</li>
+            <li onClick={navButton} className="hover:text-[#f08000]">
+              Home
+            </li>
+            <li onClick={navButton} className="hover:text-[#f08000]">
+              Wears
+            </li>
+            <li onClick={navButton} className="text-[#f08000] hover:text-black">
+              Shoes
+            </li>
+            <li onClick={navButton} className="hover:text-[#f08000]">
+              Bags
+            </li>
+            <li onClick={navButton} className="hover:text-[#f08000]">
+              Accessories
+            </li>
           </ul>
         </div>
       </div>

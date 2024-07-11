@@ -14,7 +14,7 @@ const ShopPage = () => {
     });
   };
   return (
-    <div className="w-screen bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
+    <div className="max-w-[1440px] overflow-hidden w-full bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
       <div className="px-4 lg:px-[119px] md:px-[60px]">
         <Header />
@@ -28,7 +28,7 @@ const ShopPage = () => {
         <FilterAndSort />
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
           {products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}
