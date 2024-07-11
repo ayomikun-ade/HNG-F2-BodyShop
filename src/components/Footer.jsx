@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="font-title flex flex-col flex-wrap mx-auto lg:flex-nowrap md:flex-row gap-10 items-start md:items-center justify-evenly px-10 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
+    <footer className="font-Inter flex flex-col flex-wrap mx-auto lg:flex-nowrap md:flex-row gap-10 items-start md:items-center justify-evenly px-10 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
       <div className="flex flex-col md:items-center gap-6 mx-6">
         <h2 className="text-[32px] p-2 text-white font-title">Body Shop</h2>
         <div className="flex gap-5 ">
@@ -77,7 +77,7 @@ const Footer = () => {
             type="email"
             id="email"
             placeholder="Email"
-            className="w-full rounded-l-lg pl-4 py-4 text-[#c80001] text-lg outline-none bg-white font-semibold placeholder:text-[#c80001]"
+            className="w-full rounded-l-lg pl-4 py-4 text-[#c80001] text-lg outline-none bg-white font-medium placeholder:text-[#c80001]"
             aria-label="Enter your email for updates"
           />
           <button
