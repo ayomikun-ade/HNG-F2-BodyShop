@@ -66,12 +66,24 @@ const ShopPage = () => {
         </div>
 
         {/* Load more button */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center gap-4">
           <button
             onClick={moreClick}
             className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
           >
-            See more
+            One
+          </button>
+          <button
+            onClick={moreClick}
+            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+          >
+            Two
+          </button>
+          <button
+            onClick={moreClick}
+            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+          >
+            Three
           </button>
         </div>
       </div>
