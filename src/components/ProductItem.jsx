@@ -1,4 +1,4 @@
-// ProductItem.js
+// ProductItem.jsx
 
 import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => {
     <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]">
       <img
         loading="lazy"
-        src={product.imageSrc}
+        src={`http://api.timbu.cloud/images/${product.photos[0].url}`}
         className="w-full"
         alt={product.name}
       />
@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
               className="shrink-0 aspect-square w-[18px]"
               alt="Currency symbol"
             />
-            <div>{product.price}</div>
+            <div>{product.current_price[0].NGN}</div>
           </div>
         </div>
         <div className="flex justify-between items-center">

@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import FilterAndSort from "../components/FilterAndSort";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProductItem from "../components/ProductItem";
-import products from "../components/productsData";
+// import products from "../components/productsData";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
 
 const ShopPage = () => {
   const moreClick = () => {
@@ -13,6 +15,35 @@ const ShopPage = () => {
       autoClose: 4000,
     });
   };
+
+  const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(true)
+  // const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("/api/products", {
+          params: {
+            organization_id: import.meta.env.VITE_ORGANIZATION_ID,
+            reverse_sort: false,
+            page: 1,
+            size: 10,
+            Appid: import.meta.env.VITE_APP_ID,
+            Apikey: import.meta.env.VITE_API_KEY,
+          },
+        });
+        const data = await response.data.items;
+        setProducts(data);
+        console.log(response.data);
+      } catch (error) {
+        // setError(error);
+        console.log(error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <div className="max-w-[1440px] overflow-hidden w-full bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
