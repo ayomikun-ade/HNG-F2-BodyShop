@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="font-Inter flex flex-col flex-wrap mx-auto lg:flex-nowrap md:flex-row gap-10 items-start md:items-center justify-evenly px-10 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
+    <footer className="relative bottom-0 right-0 w-full font-Inter flex flex-col flex-wrap mx-auto lg:flex-nowrap md:flex-row gap-10 items-start md:items-center justify-evenly px-10 md:px-28 py-9 md:py-40 mt-36 bg-[#C80001]">
       <div className="flex flex-col md:items-center gap-6 mx-6">
         <h2 className="text-[32px] p-2 text-white font-title">Body Shop</h2>
         <div className="flex gap-5 ">

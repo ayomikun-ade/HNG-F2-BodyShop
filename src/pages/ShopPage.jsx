@@ -62,10 +62,10 @@ const ShopPage = () => {
   // };
 
   return (
-    <div>
+    <div className="flex flex-col h-screen items-center bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
       {loading && <Loading />}
-      <div className="max-w-[1440px] overflow-hidden w-full bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
+      <div className="max-w-[1440px] overflow-hidden w-full">
         {/* <ToastContainer />
         {loading && <Loading />} */}
         <div className="px-4 lg:px-[119px] md:px-[60px]">
@@ -115,6 +115,8 @@ const ShopPage = () => {
           </div>
         </div>
         {/* Footer */}
+      </div>
+      <div className="relative w-full mt-auto">
         <Footer />
       </div>
     </div>

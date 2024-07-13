@@ -47,6 +47,23 @@ const ProductDetails = () => {
     };
     fetchProduct();
   }, [id]);
+
+  let [count, setCount] = useState(1);
+  const price = product.current_price;
+  //   const totalprice = price * num;
+
+  const addItem = () => {
+    let num = count + 1;
+    const totalprice = price * num;
+    setCount(num);
+  };
+  const removeItem = () => {
+    let num = count - 1;
+    num < 1 ? (num = 1) : count;
+    setCount(num);
+    const totalprice = price * num;
+  };
+
   return (
     <div className="grid justify-center md:grid-cols-2 grid-cols-1 items-center gap-8">
       <div>
@@ -57,8 +74,8 @@ const ProductDetails = () => {
           alt={product.name}
         />
       </div>
-      <div>
-        <h3 className="text-2xl font-bold">{product.name}</h3>
+      <div className="flex flex-col gap-4">
+        <h3 className="text-4xl font-bold">{product.name}</h3>
         <p>{product.description}</p>
         <div>
           <div className="flex gap-0 items-center px-1 text-base text-black whitespace-nowrap">
@@ -71,6 +88,18 @@ const ProductDetails = () => {
             <div>{product.current_price}</div>
           </div>
         </div>
+        <div className="flex items-center justify-between">
+          <div className="flex gap-2 items-center">
+            <span onClick={removeItem} className="px-1  cursor-pointer ">
+              <img src="/minus.svg" alt="minus sign" />
+            </span>
+            <p>{count}</p>
+            <span onClick={addItem} className="px-1 cursor-pointer">
+              <img src="/plus.svg" alt="plus sign" />
+            </span>
+          </div>
+        </div>
+        <Link className="text-lg">Add to Cart</Link>
       </div>
       {/* <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]">
         <img
