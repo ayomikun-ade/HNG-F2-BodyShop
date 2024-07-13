@@ -48,17 +48,17 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
   return (
-    <div>
+    <div className="grid justify-center md:grid-cols-2 grid-cols-1 items-center gap-8">
       <div>
         <img
           loading="lazy"
-          //   src={`http://api.timbu.cloud/images/${product.photos[0].url}`}
-          className="w-full"
+          src={`http://api.timbu.cloud/images/${product.photos[0].url}`}
+          className="w-full rounded-2xl"
           alt={product.name}
         />
       </div>
       <div>
-        <h3>{product.name}</h3>
+        <h3 className="text-2xl font-bold">{product.name}</h3>
         <p>{product.description}</p>
         <div>
           <div className="flex gap-0 items-center px-1 text-base text-black whitespace-nowrap">

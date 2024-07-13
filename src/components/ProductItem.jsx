@@ -1,11 +1,20 @@
 // ProductItem.jsx
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const ProductItem = ({ product }) => {
+  const navigate = useNavigate();
+
+  const productClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   return (
-    <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]">
+    <div
+      onClick={productClick}
+      className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]"
+    >
       <img
         loading="lazy"
         src={`http://api.timbu.cloud/images/${product.photos[0].url}`}

@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ShopPage = () => {
   const moreClick = () => {
@@ -17,6 +17,7 @@ const ShopPage = () => {
   };
 
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
@@ -39,6 +40,9 @@ const ShopPage = () => {
             Appid: import.meta.env.VITE_APP_ID,
             Apikey: import.meta.env.VITE_API_KEY,
           },
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
         });
         const data = await response.data.items;
         setProducts(data);
@@ -52,6 +56,10 @@ const ShopPage = () => {
     };
     fetchProducts();
   }, [currentPage]);
+
+  // const productClick = () => {
+  //   navigate(`/product/${product.id}`);
+  // };
 
   return (
     <div>
@@ -75,9 +83,9 @@ const ShopPage = () => {
           {/* Product grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
             {products.map((product) => (
-              <Link key={product.id} to={`/product/${product.id}`}>
-                <ProductItem key={product.id} product={product} />
-              </Link>
+              // <Link key={product.id} to={`/product/${product.id}`}>
+              <ProductItem key={product.id} product={product} />
+              // </Link>
             ))}
           </div>
 

@@ -4,7 +4,7 @@ import Title from "../components/Title";
 
 const DetailsPage = () => {
   return (
-    <div className="max-w-[1440px] px-[120px] ">
+    <div className="font-Inter max-w-[1440px] px-[120px] h-screen w-full flex items-center">
       {/* <Title title={"Product Details"} nav={"/"} /> */}
       <ProductDetails />
     </div>
