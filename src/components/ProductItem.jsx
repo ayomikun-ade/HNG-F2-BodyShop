@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <StarRating />
+          {/* <StarRating rating={product.extra_infos.rating} /> */}
           <Link
             to={"/cart"}
             className="self-start mt-2 ml-4 text-xs flex items-center bg-[#f08000] rounded p-1 text-white max-md:ml-2.5"

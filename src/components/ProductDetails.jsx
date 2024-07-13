@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import StarRating from "./StarRating";
+// import StarRating from "./StarRating";
+import { useCart } from "react-use-cart";
+import Loading from "./Loading";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState([]);
-  //   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(product.current_price);
   const { id } = useParams();
+  const { addItem } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,7 +34,7 @@ const ProductDetails = () => {
         console.log(data);
         setProduct(data);
         setLoading(false);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         // setError(error);
         console.log(error);
@@ -39,8 +44,18 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  let [quantity, setQuantity] = useState(1);
-  let [totalPrice, setTotalPrice] = useState(product.current_price);
+  if (loading) return <Loading />;
+
+  const handleAddToCart = () => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.current_price,
+      image: `https://api.timbu.cloud/images/${product.photos[0].url}`,
+      quantity,
+    });
+    toast.success("Added to cart successfully!");
+  };
 
   const handlePrice = (value) => {
     let newQuantity = quantity + value;
@@ -49,6 +64,8 @@ const ProductDetails = () => {
       setTotalPrice(newQuantity * product.current_price);
     }
   };
+  //   const updatedInfo = JSON?.parse(product.description || "{}" || {});
+  //   console.log(updatedInfo.description);
 
   return (
     <div className="grid justify-center md:grid-cols-2 grid-cols-1 items-center gap-8">
@@ -107,12 +124,12 @@ const ProductDetails = () => {
             </span>
           </div>
         </div>
-        <Link
-          to={"/cart"}
+        <button
+          onClick={handleAddToCart}
           className="text-lg border border-[#f08000] hover:bg-transparent hover:text-[#f08000] transition hover:ease-in-out bg-[#f08000] px-4 py-2 w-fit text-white rounded-lg font-Inter"
         >
           Add to Cart
-        </Link>
+        </button>
       </div>
     </div>
   );

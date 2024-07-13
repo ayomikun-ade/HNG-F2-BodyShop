@@ -7,17 +7,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 
 const ShopPage = () => {
-  const moreClick = () => {
-    toast.info("Sadly, there are no more products to view. Try again later.", {
-      autoClose: 4000,
-    });
-  };
-
   const [products, setProducts] = useState([]);
-  // const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);

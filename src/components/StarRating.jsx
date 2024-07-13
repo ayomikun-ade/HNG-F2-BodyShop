@@ -1,13 +1,14 @@
 import React from "react";
+import Star from "./Star";
 
-const StarRating = () => {
+const StarRating = ({ rating }) => {
+  const totalStars = 5;
+  const starArray = Array.from({ length: totalStars }, (v, i) => i < rating);
   return (
     <div className="flex gap-1">
-      <img loading="lazy" src="/star.svg" className="" alt="Product rating" />
-      <img loading="lazy" src="/star.svg" className="" alt="Product rating" />
-      <img loading="lazy" src="/star.svg" className="" alt="Product rating" />
-      <img loading="lazy" src="/star.svg" className="" alt="Product rating" />
-      <img loading="lazy" src="/star.svg" className="" alt="Product rating" />
+      {starArray.map((filled, index) => (
+        <Star key={index} filled={filled} />
+      ))}
     </div>
   );
 };
