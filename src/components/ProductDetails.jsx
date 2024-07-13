@@ -16,16 +16,7 @@ const ProductDetails = () => {
         const ORG = import.meta.env.VITE_ORGANIZATION_ID;
         const API = import.meta.env.VITE_APP_ID;
         const APP = import.meta.env.VITE_APP_ID;
-        // console.log(APP);
-        // const url = `/api/products/${id}?organization_id=${
-        //   import.meta.env.VITE_ORGANIZATION_ID
-        // }&Appid=${import.meta.env.VITE_APP_ID}&Apikey=${
-        //   import.meta.env.VITE_APP_ID
-        // }&`;
-        // const url =
-        //   "/api/products/1e9ad21a95a54afcb77b8dc2fa452523?organization_id=23be6d7ecbc44a779d7f6e356ce15071&Appid=YIICCNS5WM4VJ6B&Apikey=edbbb236d215459db89ebc62da6c80b520240712140602348087&";
-        // console.log(url);
-        // const response = await axios.get(url);
+
         const response = await axios.get(`/api/products/${id}`, {
           params: {
             organization_id: import.meta.env.VITE_ORGANIZATION_ID,
@@ -59,8 +50,6 @@ const ProductDetails = () => {
     }
   };
 
-  //   const price = product.current_price;
-
   return (
     <div className="grid justify-center md:grid-cols-2 grid-cols-1 items-center gap-8">
       <div>
@@ -79,6 +68,7 @@ const ProductDetails = () => {
         <div>
           <div className="flex font-semibold gap-4 items-center px-1 text-base text-black whitespace-nowrap">
             <div className="flex">
+              <p className="mr-2">Unit Price: </p>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
@@ -88,13 +78,14 @@ const ProductDetails = () => {
               <p>{product.current_price}</p>
             </div>
             <div className="flex">
+              <p className="mr-2">Total: </p>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
                 className="shrink-0 aspect-square w-[18px]"
                 alt="Currency symbol"
               />
-              <p>Total: {totalPrice ? totalPrice : product.current_price}</p>
+              <p>{totalPrice ? totalPrice : product.current_price}</p>
             </div>
           </div>
           {/* <div className="font-semibold text-lg"></div> */}
@@ -116,7 +107,10 @@ const ProductDetails = () => {
             </span>
           </div>
         </div>
-        <Link className="text-lg bg-[#f08000] px-4 py-2 w-fit text-white rounded-lg font-Inter">
+        <Link
+          to={"/cart"}
+          className="text-lg border border-[#f08000] hover:bg-transparent hover:text-[#f08000] transition hover:ease-in-out bg-[#f08000] px-4 py-2 w-fit text-white rounded-lg font-Inter"
+        >
           Add to Cart
         </Link>
       </div>

@@ -17,7 +17,7 @@ const ShopPage = () => {
   };
 
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ const ShopPage = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("/api/products", {
+        const response = await axios.get(`/api/products`, {
           params: {
             organization_id: import.meta.env.VITE_ORGANIZATION_ID,
             reverse_sort: false,
@@ -39,9 +39,6 @@ const ShopPage = () => {
             size: 10,
             Appid: import.meta.env.VITE_APP_ID,
             Apikey: import.meta.env.VITE_API_KEY,
-          },
-          headers: {
-            "Access-Control-Allow-Origin": "*",
           },
         });
         const data = await response.data.items;
@@ -93,29 +90,22 @@ const ShopPage = () => {
             </div>
           )}
 
-          {/* Load more button */}
-          <div className="flex justify-center items-center gap-4">
-            <button
-              onClick={pageClick}
-              value={1}
-              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-            >
-              1
-            </button>
-            <button
-              onClick={pageClick}
-              value={2}
-              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-            >
-              2
-            </button>
-            <button
-              onClick={pageClick}
-              value={3}
-              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-            >
-              3
-            </button>
+          {/* pagination button */}
+          <div className="flex justify-center items-center gap-4 mb-1">
+            {[1, 2, 3].map((page) => (
+              <button
+                key={page}
+                value={page}
+                onClick={pageClick}
+                className={`text-[#f08000] border border-[#f08000] px-2 py-1 rounded ${
+                  page == currentPage
+                    ? `bg-[#f08000] text-white`
+                    : `bg-transparent text-[#f08000]`
+                } hover:bg-[#f08000] hover:text-white transition hover:ease-in-out text-base`}
+              >
+                {page}
+              </button>
+            ))}
           </div>
         </div>
         {/* Footer */}

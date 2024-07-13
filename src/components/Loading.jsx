@@ -3,7 +3,7 @@ import loader from "/loader.png";
 
 const Loading = () => {
   return (
-    <div className="h-screen w-full grid place-items-center absolute top-0 backdrop-blur-sm">
+    <div className="min-h-screen grid place-items-center absolute top-0 left-0 right-0 bottom-0 backdrop-blur-sm">
       <img src={loader} alt="loader" className="animate-spin w-40 h-40" />
     </div>
     // <div className="flex justify-center items-center">

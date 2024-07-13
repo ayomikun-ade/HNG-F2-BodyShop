@@ -5,10 +5,10 @@ import Header from "../components/Header";
 
 const DetailsPage = () => {
   return (
-    <div className="font-Inter max-w-[1440px] px-[120px] min-h-screen w-full  items-center">
+    <div className="font-Inter max-w-[1440px] px-4 lg:px-[120px] md:px-[60px] min-h-screen w-full  items-center">
       <Header />
       <Title title={"Product Details"} nav={"/"} />
-      <div className="flex mt-12">
+      <div className="flex mt-12 mb-6">
         <ProductDetails />
       </div>
     </div>
