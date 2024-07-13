@@ -73,7 +73,9 @@ const CartItem = ({ item }) => {
             alt={item.name}
           />
           <div>
-            <h3 className="text-lg font-semibold leading-none">{item.name}</h3>
+            <h3 className="text-lg mb-1 font-semibold leading-none">
+              {item.name}
+            </h3>
             <p className="text-base font-normal">
               Comfortable and durable shoes.
             </p>
@@ -84,7 +86,7 @@ const CartItem = ({ item }) => {
                 className="shrink-0 w-[20px]"
                 alt="Currency symbol"
               />
-              <div className="text-xl">{totalPrice}</div>
+              <div className="text-xl">{item.price}</div>
             </div>
           </div>
         </div>
@@ -103,7 +105,7 @@ const CartItem = ({ item }) => {
             >
               <img src="/minus.svg" alt="minus sign" className="w-5" />
             </span>
-            <p>{quantity}</p>
+            <p>{item.quantity}</p>
             <span
               onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
               className="px-1 cursor-pointer"

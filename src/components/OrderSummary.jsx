@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderSummary = () => {
+const OrderSummary = ({ totalAmount }) => {
   return (
     <div className="hidden lg:inline-block col-span-2 border border-neutral-400 rounded-[24px] py-20 px-8 h-fit mt-6 md:mt-24">
       <h2 className="text-3xl font-bold mb-11">Order Summary</h2>
@@ -14,7 +14,7 @@ const OrderSummary = () => {
               className="shrink-0 w-[24px]"
               alt="Currency symbol"
             />
-            311,000
+            {totalAmount}
           </p>
         </div>
         <div className="flex justify-between">
@@ -26,7 +26,7 @@ const OrderSummary = () => {
               className="shrink-0 w-[24px]"
               alt="Currency symbol"
             />
-            0,000
+            0.00
           </p>
         </div>
         <div className="flex justify-between">
@@ -38,7 +38,7 @@ const OrderSummary = () => {
               className="shrink-0 w-[24px]"
               alt="Currency symbol"
             />
-            0,000
+            0.00
           </p>
         </div>
         <div className="flex justify-between border-b border-neutral-400 pb-9">
@@ -55,7 +55,7 @@ const OrderSummary = () => {
             className="shrink-0 w-[24px]"
             alt="Currency symbol"
           />
-          311,000
+          {totalAmount}
         </p>
       </div>
     </div>

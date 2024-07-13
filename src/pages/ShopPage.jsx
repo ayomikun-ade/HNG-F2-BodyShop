@@ -47,6 +47,8 @@ const ShopPage = () => {
     fetchProducts();
   }, [currentPage]);
 
+  if (loading) return <Loading />;
+
   // const productClick = () => {
   //   navigate(`/product/${product.id}`);
   // };
@@ -71,17 +73,17 @@ const ShopPage = () => {
           <FilterAndSort />
 
           {/* Product grid */}
-          {loading ? (
-            <Loading />
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
-              {products.map((product) => (
-                // <Link key={product.id} to={`/product/${product.id}`}>
-                <ProductItem key={product.id} product={product} />
-                // </Link>
-              ))}
-            </div>
-          )}
+          {/* {loading ? ( */}
+          {/* <Loading /> */}
+          {/* // ) : ( */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
+            {products.map((product) => (
+              // <Link key={product.id} to={`/product/${product.id}`}>
+              <ProductItem key={product.id} product={product} />
+              // </Link>
+            ))}
+          </div>
+          {/* )} */}
 
           {/* pagination button */}
           <div className="flex justify-center items-center gap-4 mb-1">

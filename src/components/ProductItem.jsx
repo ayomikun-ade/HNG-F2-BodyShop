@@ -11,10 +11,7 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div
-      onClick={productClick}
-      className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.05]"
-    >
+    <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.01]">
       <img
         loading="lazy"
         src={`http://api.timbu.cloud/images/${product.photos[0].url}`}
@@ -34,15 +31,12 @@ const ProductItem = ({ product }) => {
             <div>{product.current_price[0].NGN}</div>
           </div>
         </div>
-        <div className="flex justify-between items-center">
-          {/* <StarRating rating={product.extra_infos.rating} /> */}
-          <Link
-            to={"/cart"}
-            className="self-start mt-2 ml-4 text-xs flex items-center bg-[#f08000] rounded p-1 text-white max-md:ml-2.5"
-          >
-            Add to cart
-          </Link>
-        </div>
+        <button
+          onClick={productClick}
+          className=" font-Inter w-full mt-2 text-center text-xs flex justify-center items-center bg-[#c80001] hover:bg-[#f02020] rounded py-2 text-white"
+        >
+          View Details
+        </button>
       </div>
     </div>
   );

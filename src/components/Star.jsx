@@ -3,7 +3,11 @@ import React from "react";
 const Star = ({ filled }) => {
   return (
     <span>
-      {filles ? <img src="/star.scg" alt="" /> : <img src="/starempty.svg" />}
+      {filled ? (
+        <img src="/star.svg" className="w-5" alt="filled star" />
+      ) : (
+        <img src="/starempty.svg" className="w-5" alt="empty star" />
+      )}
     </span>
   );
 };

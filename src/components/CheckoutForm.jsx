@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import OrderSummary from "./OrderSummary";
+// import OrderSummary from "./OrderSummary";
 import OrderMobile from "./OrderMobile";
+import { useCart } from "react-use-cart";
 
 const CheckoutForm = () => {
+  const { cartTotal } = useCart();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -97,13 +99,13 @@ const CheckoutForm = () => {
                 className="appearance-none"
               />
               <img src="/check.svg" alt="check" className="w-7  mr-2" />
-              <label htmlFor="paid" className="text-lg">
+              <label htmlFor="paid" className="text-neutral-600 text-lg">
                 Paid Shipping
               </label>
             </div>
           </fieldset>
 
-          <OrderMobile />
+          <OrderMobile totalAmount={cartTotal} />
 
           <fieldset className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold my-6">Payment Details</h2>

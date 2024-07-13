@@ -5,6 +5,7 @@ import axios from "axios";
 import { useCart } from "react-use-cart";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
+import StarRating from "./StarRating";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState([]);
@@ -80,12 +81,13 @@ const ProductDetails = () => {
         )}
       </div>
       <div className="flex flex-col gap-4">
-        <h3 className="text-4xl font-bold">{product.name}</h3>
+        <h3 className="text-3xl font-bold">{product.name}</h3>
         <p>{product.description}</p>
+        <StarRating rating={product.extra_infos[0]?.value} />
         <div>
           <div className="flex font-semibold gap-4 items-center px-1 text-base text-black whitespace-nowrap">
             <div className="flex">
-              <p className="mr-2">Unit Price: </p>
+              <p className="mr-2">Price: </p>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/3587fc743300d2c8a6738e5ff610e063504059bc8cf20939676b5d0db7e1e0f3?apiKey=af97e94b909e4cdbb531b36fb1b19598&"
@@ -94,7 +96,7 @@ const ProductDetails = () => {
               />
               <p>{product.current_price}</p>
             </div>
-            <div className="flex">
+            {/* <div className="flex">
               <p className="mr-2">Total: </p>
               <img
                 loading="lazy"
@@ -103,11 +105,11 @@ const ProductDetails = () => {
                 alt="Currency symbol"
               />
               <p>{totalPrice ? totalPrice : product.current_price}</p>
-            </div>
+            </div> */}
           </div>
           {/* <div className="font-semibold text-lg"></div> */}
         </div>
-        <div className="flex items-center justify-between">
+        {/* <div className="flex items-center justify-between">
           <div className="flex gap-2 items-center">
             <span
               onClick={() => handlePrice(-1)}
@@ -123,7 +125,7 @@ const ProductDetails = () => {
               <img src="/plus.svg" alt="plus sign" />
             </span>
           </div>
-        </div>
+        </div> */}
         <button
           onClick={handleAddToCart}
           className="text-lg border border-[#f08000] hover:bg-transparent hover:text-[#f08000] transition hover:ease-in-out bg-[#f08000] px-4 py-2 w-fit text-white rounded-lg font-Inter"
