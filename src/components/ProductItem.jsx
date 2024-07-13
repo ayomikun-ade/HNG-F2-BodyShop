@@ -11,10 +11,12 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="rounded-3xl bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.01]">
+    <div className="rounded-3xl overflow-hidden bg-white font-semibold w-full transition duration-700 hover:ease-in-out hover:scale-[1.01]">
       <img
         loading="lazy"
-        src={`http://api.timbu.cloud/images/${product.photos[0].url}`}
+        src={`http://api.timbu.cloud/images/${
+          product?.photos.find((photo) => photo.position === 1)?.url
+        }`}
         className="w-full"
         alt={product.name}
       />

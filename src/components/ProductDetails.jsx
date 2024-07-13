@@ -70,15 +70,45 @@ const ProductDetails = () => {
 
   return (
     <div className="grid justify-center md:grid-cols-2 grid-cols-1 items-center gap-8">
-      <div>
-        {product?.photos && (
+      <div className="flex flex-col gap-3">
+        <div>
+          {product?.photos && (
+            <img
+              loading="lazy"
+              src={`http://api.timbu.cloud/images/${
+                product?.photos.find((photo) => photo.position === 1)?.url
+              }`}
+              className="w-full rounded-2xl"
+              alt={product.name}
+            />
+          )}
+        </div>
+        <div className="grid grid-cols-3 gap-2">
           <img
             loading="lazy"
-            src={`http://api.timbu.cloud/images/${product?.photos[0]?.url}`}
-            className="w-full rounded-2xl"
+            src={`http://api.timbu.cloud/images/${
+              product?.photos.find((photo) => photo.position === 2)?.url
+            }`}
+            className="w-full rounded-xl"
             alt={product.name}
           />
-        )}
+          <img
+            loading="lazy"
+            src={`http://api.timbu.cloud/images/${
+              product?.photos.find((photo) => photo.position === 3)?.url
+            }`}
+            className="w-full rounded-xl"
+            alt={product.name}
+          />
+          <img
+            loading="lazy"
+            src={`http://api.timbu.cloud/images/${
+              product?.photos.find((photo) => photo.position === 4)?.url
+            }`}
+            className="w-full rounded-xl"
+            alt={product.name}
+          />
+        </div>
       </div>
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl font-bold">{product.name}</h3>
