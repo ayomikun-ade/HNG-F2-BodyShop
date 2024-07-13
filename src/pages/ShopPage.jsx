@@ -64,7 +64,7 @@ const ShopPage = () => {
   return (
     <div className="flex flex-col min-h-screen items-center bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
-      {loading && <Loading />}
+      {/* {loading && <Loading />} */}
       <div className="max-w-[1440px] overflow-hidden w-full">
         {/* <ToastContainer />
         {loading && <Loading />} */}
@@ -81,13 +81,17 @@ const ShopPage = () => {
           <FilterAndSort />
 
           {/* Product grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
-            {products.map((product) => (
-              // <Link key={product.id} to={`/product/${product.id}`}>
-              <ProductItem key={product.id} product={product} />
-              // </Link>
-            ))}
-          </div>
+          {loading ? (
+            <Loading />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
+              {products.map((product) => (
+                // <Link key={product.id} to={`/product/${product.id}`}>
+                <ProductItem key={product.id} product={product} />
+                // </Link>
+              ))}
+            </div>
+          )}
 
           {/* Load more button */}
           <div className="flex justify-center items-center gap-4">
