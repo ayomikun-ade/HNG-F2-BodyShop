@@ -6,6 +6,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
+import { Link } from "react-router-dom";
 
 const ShopPage = () => {
   const moreClick = () => {
@@ -16,17 +18,23 @@ const ShopPage = () => {
 
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  // const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
+
+  const pageClick = (e) => {
+    // console.log(e.target.value);
+    setCurrentPage(e.target.value);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        setLoading(true);
         const response = await axios.get("/api/products", {
           params: {
             organization_id: import.meta.env.VITE_ORGANIZATION_ID,
             reverse_sort: false,
-            page: 1,
+            page: currentPage,
             size: 10,
             Appid: import.meta.env.VITE_APP_ID,
             Apikey: import.meta.env.VITE_API_KEY,
@@ -34,60 +42,73 @@ const ShopPage = () => {
         });
         const data = await response.data.items;
         setProducts(data);
-        console.log(response.data);
+        setLoading(false);
+        // console.log(response.data);
       } catch (error) {
         // setError(error);
         console.log(error);
+        setLoading(false);
       }
     };
     fetchProducts();
-  }, []);
+  }, [currentPage]);
 
   return (
-    <div className="max-w-[1440px] overflow-hidden w-full bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
+    <div>
       <ToastContainer />
-      <div className="px-4 lg:px-[119px] md:px-[60px]">
-        <Header />
-        {/* Page header */}
-        <div className="text-center mt-[53px] font-Inter">
-          <h1 className="text-4xl font-bold leading-none mb-4">Shoes</h1>
-          <p className="text-xl">Explore our range of footwear</p>
-        </div>
+      {loading && <Loading />}
+      <div className="max-w-[1440px] overflow-hidden w-full bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
+        {/* <ToastContainer />
+        {loading && <Loading />} */}
+        <div className="px-4 lg:px-[119px] md:px-[60px]">
+          <Header />
 
-        {/* Filter button */}
-        <FilterAndSort />
+          {/* Page header */}
+          <div className="text-center mt-[53px] font-Inter">
+            <h1 className="text-4xl font-bold leading-none mb-4">Shoes</h1>
+            <p className="text-xl">Explore our range of footwear</p>
+          </div>
 
-        {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
-          {products.map((product) => (
-            <ProductItem key={product.id} product={product} />
-          ))}
-        </div>
+          {/* Filter button */}
+          <FilterAndSort />
 
-        {/* Load more button */}
-        <div className="flex justify-center items-center gap-4">
-          <button
-            onClick={moreClick}
-            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-          >
-            One
-          </button>
-          <button
-            onClick={moreClick}
-            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-          >
-            Two
-          </button>
-          <button
-            onClick={moreClick}
-            className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
-          >
-            Three
-          </button>
+          {/* Product grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 mt-6 mb-8">
+            {products.map((product) => (
+              <Link key={product.id} to={`/product/${product.id}`}>
+                <ProductItem key={product.id} product={product} />
+              </Link>
+            ))}
+          </div>
+
+          {/* Load more button */}
+          <div className="flex justify-center items-center gap-4">
+            <button
+              onClick={pageClick}
+              value={1}
+              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+            >
+              1
+            </button>
+            <button
+              onClick={pageClick}
+              value={2}
+              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+            >
+              2
+            </button>
+            <button
+              onClick={pageClick}
+              value={3}
+              className="text-[#f08000] hover:scale-105 transition hover:ease-in-out text-base text-center"
+            >
+              3
+            </button>
+          </div>
         </div>
+        {/* Footer */}
+        <Footer />
       </div>
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
