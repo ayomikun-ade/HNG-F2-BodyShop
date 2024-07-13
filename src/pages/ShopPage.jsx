@@ -62,7 +62,7 @@ const ShopPage = () => {
   // };
 
   return (
-    <div className="flex flex-col h-screen items-center bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
+    <div className="flex flex-col min-h-screen items-center bg-[url(/src/assets/hero.png)] bg-no-repeat bg-auto md:bg-contain">
       <ToastContainer />
       {loading && <Loading />}
       <div className="max-w-[1440px] overflow-hidden w-full">
@@ -116,7 +116,7 @@ const ShopPage = () => {
         </div>
         {/* Footer */}
       </div>
-      <div className="relative w-full mt-auto">
+      <div className="w-full mt-auto ">
         <Footer />
       </div>
     </div>

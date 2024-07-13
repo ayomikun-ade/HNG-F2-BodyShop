@@ -8,7 +8,7 @@ import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   return (
-    <>
+    <div className="">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ShopPage />} />
@@ -18,7 +18,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <ShopPage /> */}
-    </>
+    </div>
   );
 }
 
